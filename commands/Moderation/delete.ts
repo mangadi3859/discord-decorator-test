@@ -1,6 +1,6 @@
 //Default
 import { ICommand } from "../../utils/interfaces";
-import { Client, Message } from "discord.js";
+import { Client, Message, MessageEmbed } from "discord.js";
 import * as Decorators from "../../utils/decorators";
 // import * as conf from "../../config/config.json";
 
