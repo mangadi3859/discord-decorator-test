@@ -30,10 +30,10 @@ class Command implements ICommand {
         let embed = new Discord.MessageEmbed()
         .setTitle('**Clear Message**')
         .setDescription(`**${amount} message(s) has been deleted.**`)
-        .setColor(color.moderation)
+        .setColor("#00FFFF")
         .setTimestamp()
 
-        return msg.channel.send(embed).then(msgs => msgs.delete({timeout: 6000}))
+        return msg.channel.send({embeds: [embed]}).then(msgs => msgs.delete({timeout: 6000}))
     });
     }
 }
