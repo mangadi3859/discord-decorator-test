@@ -32,7 +32,7 @@ export function BotPermission(permission: PermissionResolvable) {
         let original: Function = property.value;
 
         property.value = function (bot: Client, msg: Message, args: string[]) {
-            if (msg.guild?.members.cache.get(msg.author.id)?.permissions.has(permission)) return msg.channel.send(`I don't have the permission of \`${permission}\`.`);
+            if (msg.guild?.members.cache.get(bot.user.id)?.permissions.has(permission)) return msg.channel.send(`I don't have the permission of \`${permission}\`.`);
 
             return <Promise<any>>original.apply(this, [bot, msg, args]);
         };
